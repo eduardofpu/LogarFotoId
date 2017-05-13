@@ -1,0 +1,124 @@
+
+<div class="jumbotron">
+
+  <div class="container">
+      <div class="row">
+          <div class="col-md-3 col-md-offset-5">
+              <div class="login-panel panel panel-default">
+                  <div class="panel-heading">
+                      <h3 class="panel-title">Cadastrar dados</h3>
+                  </div>
+                  <div class="panel-body">
+
+
+
+
+      <form name="form" novalidate   role="form" ng-submit="saveUser(u)">
+
+                                       <center>{{msg}}</center>
+
+
+        <img ng-src="{{u.user.fileUploadPessoa.mimeType}},{{u.user.fileUploadPessoa.file}}" width="100" class="img-circle img80_80" />
+
+          <div ng-show="form.name.$dirty" >
+             <div  ng-show="form.name.$error.required" class="alert alert-danger" role="alert">Campo nome é obrigatório</div>
+
+           </div>
+
+       
+
+        <div ng-show="form.password.$dirty" >
+
+                          <div  ng-show="form.data.$error.required" class="alert alert-danger" role="alert">Campo data </div>
+                             <div  ng-show="form.data.$error.password" class="alert alert-danger" role="alert">data inválida </div>
+
+
+         </div>
+
+
+
+
+
+          <div class="form-group">
+ 
+                          Avatar :
+                         <br />
+     <input class="form-control"  type="file"
+     class="btn btn-danger btn-xs"
+      ng-model="u.user.fileUploadPessoa.file" accept="image/*"
+      multiple app-filereader ng-change="updateLinkImage(u.user.fileUploadPessoa.file[0])"/>
+                      <br />
+
+
+
+
+<div class="form-group">
+<div class="form-group" ng-class="{'has-error': form.name.$invalid ,'has-success': form.name.$valid}">
+        <input class="form-control" type="text" placeholder="Nome de usuario" ng-model="u.user.name" autofocus required  >
+
+  </div>
+
+      </div>
+
+
+      
+
+
+  <div class="form-group" ng-class="{'has-error': form.data.$invalid ,'has-success': form.data.$valid}">
+
+        <input    class="form-control" type="text" placeholder="email" ng-model="u.user.email"  
+        class="form-control" autofocus  required  >
+
+
+      </div>
+      
+      
+  <div class="form-group" ng-class="{'has-error': form.data.$invalid ,'has-success': form.data.$valid}">
+
+        <input    class="form-control" type="password" placeholder="password" ng-model="u.user.password"  
+        class="form-control" autofocus  required  >
+
+
+      </div>
+      
+
+      
+
+
+  <div class="form-group" ng-class="{'has-error': form.data.$invalid ,'has-success': form.data.$valid}">
+
+        <input    class="form-control" type="text" placeholder="data Nascimento" ng-model="u.dataNascimento"  name="data"
+        class="form-control" autofocus  required  >
+
+
+      </div>
+
+
+
+
+
+    <!-- onClick="history.go(-1)"-->
+
+
+      <button  ng-disabled="form.$invalid" class="btn btn-success btn-s"   type="submit">
+             <span class="glyphicon glyphicon-upload"></span> Salvar </button>
+
+
+
+ <button type="reset"  class="btn btn-danger btn-s"> <span class="glyphicon glyphicon-trash"></span>Limpar Nome</button>
+
+
+
+
+  </div>
+
+    </form>
+    <!--
+    <pre >{{permissionEdit|json}}</pre>
+-->
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
